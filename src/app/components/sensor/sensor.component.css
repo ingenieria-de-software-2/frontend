@@ -1,0 +1,74 @@
+.card_temperatura{
+    width: 500px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.card_temperature_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.card_temperature_title p {
+    margin-top: 20px;
+}
+
+.card_temperature_data{
+    display: flex;
+    justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.card_temperatura_diagnostico{
+    display: flex;
+    justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.card_temperature_buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.card_temperature_input{
+    display: flex;
+    flex-direction: column;
+}
+.card_temperature_input label{
+    color: black;
+    font-family: 'Nunito';
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.card_temperature_input input{
+    border-radius: 8px;
+    border: 1px black;
+    outline: none;
+}
+
+.card_temperature_button{
+    margin-top: 5px;
+}
+
+.card_temperature_button button{
+    border-radius: 10px;
+}
