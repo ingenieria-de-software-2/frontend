@@ -6,13 +6,20 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { ComponentsModule } from '../components/components.module';
+import { ApiService } from '../services/api.service';
+import { AdmtempComponent } from './admtemp/admtemp.component';
+import { GraficopageComponent } from './graficopage/graficopage.component';
+import { TablaComponent } from './tabla/tabla.component';
 
 
 
 @NgModule({
   declarations: [
     PagesComponent,
-    TermometerComponent
+    TermometerComponent,
+    AdmtempComponent,
+    GraficopageComponent,
+    TablaComponent
   ],
   imports: [
     CommonModule,
@@ -20,6 +27,9 @@ import { ComponentsModule } from '../components/components.module';
     RouterModule,
     SharedModule,
     ComponentsModule
+  ],
+  providers: [
+    ApiService
   ]
 })
 export class PagesModule { }

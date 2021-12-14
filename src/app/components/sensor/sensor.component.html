@@ -13,10 +13,10 @@
     </div>
     <div class="card_temperature_buttons">
         <div class="card_temperature_input">
-            <input type="text" placeholder="Codigo de usuario:">
+            <input type="number" placeholder="Codigo de usuario:" #codigouser>
         </div>
         <div class="card_temperature_button">
-            <button type="button" class="btn btn-dark">Registrar</button>
+            <button type="button" class="btn btn-dark" (click)="registrarTemperatura(codigouser.value)">Registrar</button>
         </div>
     </div>
 </div>

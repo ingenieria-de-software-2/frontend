@@ -1,0 +1,47 @@
+.card_temperatura {
+    width: 500px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.card_temperature_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 30px;
+    text-transform: capitalize;
+    font-weight: 700;
+}
+
+.card_temperature_title p {
+    margin-top: 20px;
+}
+
+.card_temperature_data {
+    display: flex;
+    justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+.card_temperatura_diagnostico {
+    display: flex;
+    justify-content: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.empleado {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+}

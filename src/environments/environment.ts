@@ -12,7 +12,8 @@ export const environment = {
     storageBucket: "sw-temperatura.appspot.com",
     messagingSenderId: "294102901642",
     appId: "1:294102901642:web:b3f46ba2a4e64448301e73"
-  }
+  },
+  wsurl: "http://localhost:3000"
 };
 
 /*

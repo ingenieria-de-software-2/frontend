@@ -7,6 +7,19 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
+import { ApiService } from './services/api.service';
+import { HttpClientModule } from '@angular/common/http';
+import { NgChartsModule } from "ng2-charts";
+
+/* SOCKETS */
+import { SocketIoModule, SocketIoConfig } from "ngx-socket-io";
+
+const config: SocketIoConfig = {
+  url: environment.wsurl,
+  options: {
+    transports: ['websocket', 'polling']
+  }
+};
 
 @NgModule({
   declarations: [
@@ -16,9 +29,12 @@ import { environment } from '../environments/environment';
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    HttpClientModule,
+    SocketIoModule.forRoot(config),
+    NgChartsModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

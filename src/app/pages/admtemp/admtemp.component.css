@@ -1,0 +1,15 @@
+.container-fluid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: "control panel" "control panel";
+}
+
+.control {
+    grid-area: control;
+    margin-left: 50px;
+}
+
+.panel {
+    grid-area: panel;
+}

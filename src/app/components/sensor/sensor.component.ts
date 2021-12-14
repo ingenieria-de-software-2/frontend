@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { TemperaturaService } from "../../services/temperatura.service";
 import { Temperatura } from "../../models/temperatura";
 import { Subscription } from 'rxjs';
+import { ApiService } from 'src/app/services/api.service';
+import { data } from '../../models/data';
+import { formatDate } from '@angular/common';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sensor',
@@ -10,16 +14,20 @@ import { Subscription } from 'rxjs';
 })
 export class SensorComponent implements OnInit {
 
-  temperatura?: any;
+  temperaturaFire?: any;
   temperaturaCorp?: number;
   fireSubscription?: Subscription;
 
   diagnostico?: string;
   textClass?: string;
 
+  public codigouser: string = "";
+
   constructor(
-    private temperatureService: TemperaturaService
-  ) { }
+    private temperatureService: TemperaturaService,
+    private apiService: ApiService
+  ) { 
+  }
 
   ngOnInit(): void {
     this.obtenerTemp();
@@ -34,13 +42,12 @@ export class SensorComponent implements OnInit {
     .getAll()
     .snapshotChanges()
     .subscribe((data) => {
-      this.temperatura = data.payload.toJSON();
+      this.temperaturaFire = data.payload.toJSON();
       /* if((Math.floor(this.temperatura) > 35 && Math.floor(this.temperatura) < 42)){
         this.temperaturaCorp = Math.floor(this.temperatura);
       } */
-      this.temperaturaCorp = Math.floor(this.temperatura);
+      this.temperaturaCorp = Math.floor(this.temperaturaFire);
       this.obtenerDiagnostico(this.temperaturaCorp);
-      console.log(this.temperaturaCorp);
     })
   }
 
@@ -56,5 +63,23 @@ export class SensorComponent implements OnInit {
       this.textClass = "text-danger";
     }
   }
+
+  registrarTemperatura(codigousuario: string){
+    const fechaActual = new Date().toLocaleDateString();
+    const codigoApi = parseInt(codigousuario);
+    const datos: data = {
+      temperatura: this.temperaturaCorp,
+      fecha: fechaActual,
+      codigo: codigoApi
+    };
+
+    this.apiService.registrarTemp(datos).subscribe((res: any) => {
+      console.log(res);
+    });
+
+    this.apiService.wsocketTemperature(datos);
+  }
+
+  
 
 }
